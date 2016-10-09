@@ -30,27 +30,27 @@ public class Singleton {
 //		return instance;
 //	}
 	
-//	// 懒汉法 线程安全 JDK 1.5+
-//	private static violate Singleton instance;
-//	private Singleton() {}
-//	public static Singleton getInstance(){
-//		if ( instance == null ){
-//			synchronized (Singleton.class){
-//				if (instance == null ){
-//					instance = new Singleton();
-//				}
-//			}
-//		}
-//		return instance;
-//	}
-
-	private Singleton() { }
-
-	private static class InnerSingleton{
-		private static final Singleton instance = new Singleton();
-	}
-
+	// 懒汉法 线程安全 JDK 1.5+
+	private static volatile Singleton instance;
+	private Singleton() {}
 	public static Singleton getInstance(){
-		return InnerSingleton.instance;
+		if ( instance == null ){
+			synchronized (Singleton.class){
+				if (instance == null ){
+					instance = new Singleton();
+				}
+			}
+		}
+		return instance;
 	}
+
+//	private Singleton() { }
+//
+//	private static class InnerSingleton{
+//		private static final Singleton instance = new Singleton();
+//	}
+//
+//	public static Singleton getInstance(){
+//		return InnerSingleton.instance;
+//	}
 }
