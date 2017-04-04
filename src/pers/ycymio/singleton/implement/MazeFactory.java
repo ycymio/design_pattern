@@ -1,4 +1,4 @@
-package pers.ycymio.singletonimplement;
+package pers.ycymio.singleton.implement;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class MazeFactory {
 
-    // 无子类
+    // 无子�?
     private MazeFactory(){};
     private static class InnerMazeFactory{
         private static final MazeFactory maze = new MazeFactory();
@@ -17,7 +17,7 @@ public class MazeFactory {
         return InnerMazeFactory.maze;
     }
 
-//    // 有子类
+//    // 有子�?
 //    private static MazeFactory maze =  null;
 //    private static Map<String, MazeFactory> registry = new HashMap<String, MazeFactory>();
 //    private static ChildMazeFactory childMazeFactory;

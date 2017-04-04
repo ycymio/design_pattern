@@ -1,4 +1,4 @@
-package pers.ycymio.singletonimplement;
+package pers.ycymio.singleton.implement;
 
 /**
  * Created by ycy on 16/10/8.
